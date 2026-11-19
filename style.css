@@ -220,6 +220,61 @@ body {
     color: var(--azul);
 }
 
+/* ---------- TECNOLOGIA (flexbox) ---------- */
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+}
+
+.tec {
+    flex: 1 1 13rem;                  /* cresce, encolhe, base de 13rem */
+    background-color: var(--branco);
+    border: 2px solid var(--preto);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s;
+}
+
+.tec .sigla {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--preto);
+    color: var(--branco);
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+
+.tec h3 {
+    margin: 1rem 0 0.3rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.tec p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.tec:hover {
+    transform: translateY(-6px);
+    background-color: var(--preto);
+    color: var(--branco);
+}
+
+.tec:hover .sigla {
+    background-color: var(--azul);
+}
+
+/* pseudoclasse :nth-child(odd) - borda azul nos cartões ímpares */
+.tec:nth-child(odd) {
+    border-color: var(--azul);
+}
+
 /* ---------- FAMÍLIA ---------- */
 .familia {
     display: flex;
@@ -244,6 +299,28 @@ body {
 .lista-familia li {
     padding: 0.6rem 0;
     border-bottom: 1px solid #ddd;
+}
+
+.familia .gato {
+    margin: 0;
+    text-align: center;
+}
+
+.familia .gato img {
+    width: 14rem;
+    height: 18rem;
+    object-fit: cover;
+    transform: rotate(3deg);
+    transition: transform 0.3s;
+}
+
+.familia .gato img:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.familia .gato figcaption {
+    margin-top: 0.8rem;
+    font-weight: 600;
 }
 
 /* pseudoclasse :last-child */
